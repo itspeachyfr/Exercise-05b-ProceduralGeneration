@@ -17,11 +17,10 @@ public class MazeGenerator : MonoBehaviour
     Dictionary<Vector2, int> cell_walls = new Dictionary<Vector2, int>();
 
     float tile_size = 10;
-    int width = 10;   // Width of map  
-    int height = 10;  // Height of map
+    public int width = 10;   // Width of map  
+    public int height = 10;  // Height of map
 
     List<List<int>> map = new List<List<int>>();
-
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +74,7 @@ public class MazeGenerator : MonoBehaviour
 
             if (neighbors.Count > 0)
             {
-                Vector2 next = neighbors[UnityEngine.Random.RandomRange(0, neighbors.Count)];
+                Vector2 next = neighbors[UnityEngine.Random.Range(0, neighbors.Count)];
                 stack.Add(current);
 
                 Vector2 dir = next - current;
